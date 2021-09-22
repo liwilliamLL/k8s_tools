@@ -15,7 +15,7 @@ echo "1">/proc/sys/net/bridge/bridge-nf-call-ip6tables
 mkdir /etc/cni
 mkdir /etc/cni/net.d/
 #cp ./10-flannel.conflist   /etc/cni/net.d/
-cp ./10-calico.conflist    /etc/cni/net.d/
+#cp ./10-calico.conflist    /etc/cni/net.d/
 
 cp ./kubernetes.repo /etc/yum.repos.d/
 yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
@@ -53,5 +53,7 @@ docker rmi juziwudi/pause:$PAUSE_VERSION
 
 #k8s ETCD容器镜像
 docker pull juziwudi/etcd:$ETCD_VERSION
-docker tag k8s.gcr.io/etcd:$ETCD_VERSION juziwudi/etcd:$ETCD_VERSION
+docker tag juziwudi/etcd:$ETCD_VERSION k8s.gcr.io/etcd:$ETCD_VERSION 
 docker rmi juziwudi/etcd:$ETCD_VERSION
+
+kubeadm init --config=int.default.yaml
