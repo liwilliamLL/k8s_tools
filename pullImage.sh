@@ -11,9 +11,9 @@ echo "1">/proc/sys/net/bridge/bridge-nf-call-iptables
 echo "1">/proc/sys/net/bridge/bridge-nf-call-ip6tables
 
 KUBE_VERSION=v1.22.2    #kubeadm的版本 
-PAUSE_VERSION=3.4.1     #暂停容器的镜像版本
-CORE_DNS_VERSION=v1.8.0 #coreDns容器的镜像版本
-ETCD_VERSION=3.4.13-0   #ETCD的版本
+PAUSE_VERSION=3.5     #暂停容器的镜像版本
+CORE_DNS_VERSION=v1.8.4 #coreDns容器的镜像版本
+ETCD_VERSION=3.5.0-0   #ETCD的版本
 
 
 #k8s基础镜像
