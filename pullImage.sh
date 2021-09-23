@@ -56,5 +56,5 @@ docker pull juziwudi/etcd:$ETCD_VERSION
 docker tag juziwudi/etcd:$ETCD_VERSION k8s.gcr.io/etcd:$ETCD_VERSION 
 docker rmi juziwudi/etcd:$ETCD_VERSION
 
-kubeadm init --config=int.default.yaml
+kubeadm init --config=int.yaml
 
